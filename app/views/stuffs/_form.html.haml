@@ -1,0 +1,22 @@
+= simple_form_for @stuff do |f|
+  - if @stuff.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@stuff.errors.count, "error")} prohibited this stuff from being saved:"
+      %ul
+        - @stuff.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.input :name
+
+    / Version that breaks with simple_form with private method `binding' called for nil:NilClass
+    / = f.simple_fields_for :sub_stuffs
+
+    / Mistakenly tought that the line above was supposed to work because of: https://github.com/ryanb/nested_form#partials
+
+    / Working version with simple_form
+    = f.simple_fields_for :sub_stuffs do |ss|
+      = render 'sub_stuff_fields', f: ss
+
+  .actions
+    = f.submit 'Save'

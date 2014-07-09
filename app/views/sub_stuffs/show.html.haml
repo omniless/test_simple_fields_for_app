@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @sub_stuff.name
+
+= link_to 'Edit', edit_sub_stuff_path(@sub_stuff)
+\|
+= link_to 'Back', sub_stuffs_path
