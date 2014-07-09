@@ -4,7 +4,6 @@ source 'https://rubygems.org'
 gem 'rails', '4.1.4'
 # Use sqlite3 as the database for Active Record
 # gem 'sqlite3'
-gem 'mongoid'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -38,3 +37,6 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+gem 'mongoid'
+gem 'haml-rails'
+gem 'simple_form', '~> 3.1.0.rc1'
